@@ -1,0 +1,147 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
+ifarme {
+    display: block;
+}
+
+:root {
+    --main-theme: #151515;
+    --secondary-theme: orangered;
+    --link-clr: rgb(0, 255, 242);
+    --clr-main: rgb(170, 170, 170);
+    --nav-height: 3rem;
+}
+
+html {
+    font-size: 16px;
+    color: var(--clr-main);
+}
+
+body {
+    position: sticky;
+    top: 0;
+    /* background-image: url('https://img.freepik.com/free-photo/cool-geometric-triangular-figure-neon-laser-light-great-backgrounds-wallpapers_181624-9331.jpg?w=900&t=st=1697192809~exp=1697193409~hmac=3dafc5bc583acc3d416d624459f1662c6c2964fd0f6352d31dbb9f3e76b297d1'); */
+    background-color: var(--main-theme);
+    -webkit-backdrop-filter: blur(0.3rem);
+    backdrop-filter: blur(0.3rem);
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.top-navbar {
+    position: sticky;
+
+    display: flex;
+    min-height: 3rem;
+    max-width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: inline-block;
+    padding: 0.4rem 1rem 0;
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    color: white;
+
+    position: relative;
+    z-index: 1000;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0.8rem 0 0;
+    min-height: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #15151594;
+    transition: transform 250ms ease-in-out;
+}
+
+
+.nav-item {
+    padding-inline: 1rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: rgb(0, 255, 242);
+    letter-spacing: 0.1rem;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: white;
+    text-shadow: 0 0 1rem white;
+}
+
+.hamburger {
+    display: none;
+    padding-inline: 1rem;
+    z-index: 100;
+}
+
+.menu-btn {
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+@media (max-width: 35rem) {
+    .hamburger {
+        display: inline-block;
+        position: relative;
+        right: 1rem;
+        z-index: 1000;
+    }
+
+    .nav-list {
+        margin: 0;
+        height: unset;
+        position: fixed;
+        inset: 0 0 0 40%;
+        flex-direction: column;
+        gap: 3rem;
+        padding: min(20vh, 10rem) 2rem;
+        transform: translateX(100%);
+    }
+
+    .nav-list[data-visible="true"] {
+        transform: translateX(0);
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav-list {
+        width: 50%;
+        font-size: larger;
+    }
+
+    .nav-items {
+        padding: 50rem;
+    }
+}
+
+.front-img {
+    width: 100%;
+    min-height: 25rem;
+    border: none;
+}
